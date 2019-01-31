@@ -1,0 +1,26 @@
+//////////////////////////////////////////////////////////////////
+// !!Replace all copies of "123456789012" with your own ecobeeID!!
+//////////////////////////////////////////////////////////////////
+
+// Shared items from Ecobee binding documentation for OpenHab binding (groups removed)
+String program_currentClimateRef "currentClimateRef [%s]" { ecobee="<[123456789012#program.currentClimateRef]" }
+String settings_holdAction "holdAction [%s]" { ecobee="=[123456789012#settings.holdAction]" }
+
+// Items for Ecobee Quick Settings widget
+Group gClimates
+String climate0 "[%s]" (gClimates) { ecobee="<[123456789012#program.climates[0].climateRef]" }
+String climate1 "[%s]" (gClimates) { ecobee="<[123456789012#program.climates[1].climateRef]" }
+String climate2 "[%s]" (gClimates) { ecobee="<[123456789012#program.climates[2].climateRef]" }
+String climate3 "[%s]" (gClimates) { ecobee="<[123456789012#program.climates[3].climateRef]" }
+String climate4 "[%s]" (gClimates) { ecobee="<[123456789012#program.climates[4].climateRef]" }
+String climate5 "[%s]" (gClimates) { ecobee="<[123456789012#program.climates[5].climateRef]" }
+
+Group gClimateNames
+String climate0Name "[%s]" (gClimateNames) { ecobee="<[123456789012#program.climates[0].name]" }
+String climate1Name "[%s]" (gClimateNames) { ecobee="<[123456789012#program.climates[1].name]" }
+String climate2Name "[%s]" (gClimateNames) { ecobee="<[123456789012#program.climates[2].name]" }
+String climate3Name "[%s]" (gClimateNames) { ecobee="<[123456789012#program.climates[3].name]" }
+String climate4Name "[%s]" (gClimateNames) { ecobee="<[123456789012#program.climates[4].name]" }
+String climate5Name "[%s]" (gClimateNames) { ecobee="<[123456789012#program.climates[5].name]" }
+
+String ecobee_qs_schedule "Ecobee quick settings Scheduler" { ecobee="<[123456789012#runningEvent.holdClimateRef]", autoupdate="false" }

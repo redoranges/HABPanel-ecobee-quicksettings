@@ -1,0 +1,1 @@
+https://community.openhab.org/t/ecobee-quick-settings/38646

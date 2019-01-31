@@ -1,0 +1,31 @@
+//////////////////////////////////////////////////////////////////
+// !!Replace all copies of "123456789012" with your own ecobeeID!!
+//////////////////////////////////////////////////////////////////
+var String ecobeeID ="123456789012"
+
+// Rule for Ecobee Quick settings widgets
+rule "Ecobee Quick Settings ComfortHold"
+when
+  Item ecobee_qs_schedule received command
+then
+  var String sCMD = receivedCommand.toString
+  var String sState = transform("JSONPATH", "$.state",sCMD)
+  var String sHoldAction = transform("JSONPATH", "$.holdAction",sCMD)
+  if (sState.toString.equals("resume")) {
+    // the 1.9 onwards action bundle uses a selection string instead of an item as the first parameter
+    ecobeeResumeProgram(ecobeeID, true)
+    ecobee_eventType.postUpdate(sState.toString)
+  } else {
+    if (sHoldAction.toString.equals("useEndTime4hour")) {
+      ecobeeSetHold(ecobeeID, null, null, sState.toString, null, null, 'holdHours', 4)
+    } else if (sHoldAction.toString.equals("useEndTime2hour")) {
+      ecobeeSetHold(ecobeeID, null, null, sState.toString, null, null, 'holdHours', 2)
+    } else if (sHoldAction.toString.equals("nextPeriod")) {
+      ecobeeSetHold(ecobeeID, null, null, sState.toString, null, null, 'nextTransition', null)
+    } else if (sHoldAction.toString.equals("indefinite")) {
+      ecobeeSetHold(ecobeeID, null, null, sState.toString, null, null, null, null)
+    } else {
+      ecobeeSetHold(ecobeeID, null, null, sState.toString, null, null, null, null)
+    }
+  }
+end
