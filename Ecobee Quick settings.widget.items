@@ -14,6 +14,9 @@ String climate2 "[%s]" (gClimates) { ecobee="<[123456789012#program.climates[2].
 String climate3 "[%s]" (gClimates) { ecobee="<[123456789012#program.climates[3].climateRef]" }
 String climate4 "[%s]" (gClimates) { ecobee="<[123456789012#program.climates[4].climateRef]" }
 String climate5 "[%s]" (gClimates) { ecobee="<[123456789012#program.climates[5].climateRef]" }
+String climate6 "[%s]" (gClimates) { ecobee="<[123456789012#program.climates[6].climateRef]" }
+String climate7 "[%s]" (gClimates) { ecobee="<[123456789012#program.climates[7].climateRef]" }
+String climate8 "[%s]" (gClimates) { ecobee="<[123456789012#program.climates[8].climateRef]" }
 
 Group gClimateNames
 String climate0Name "[%s]" (gClimateNames) { ecobee="<[123456789012#program.climates[0].name]" }
@@ -22,5 +25,8 @@ String climate2Name "[%s]" (gClimateNames) { ecobee="<[123456789012#program.clim
 String climate3Name "[%s]" (gClimateNames) { ecobee="<[123456789012#program.climates[3].name]" }
 String climate4Name "[%s]" (gClimateNames) { ecobee="<[123456789012#program.climates[4].name]" }
 String climate5Name "[%s]" (gClimateNames) { ecobee="<[123456789012#program.climates[5].name]" }
+String climate6Name "[%s]" (gClimateNames) { ecobee="<[123456789012#program.climates[6].name]" }
+String climate7Name "[%s]" (gClimateNames) { ecobee="<[123456789012#program.climates[7].name]" }
+String climate8Name "[%s]" (gClimateNames) { ecobee="<[123456789012#program.climates[8].name]" }
 
 String ecobee_qs_schedule "Ecobee quick settings Scheduler" { ecobee="<[123456789012#runningEvent.holdClimateRef]", autoupdate="false" }
